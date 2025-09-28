@@ -1,10 +1,10 @@
-'use client'
 import { Home, Settings } from 'lucide-react'
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from './ui/sidebar'
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator } from '@/components/ui/sidebar'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useTheme } from 'next-themes'
-import { useMounted } from '@/hooks/useMounted'
+import AppSidebarHeader from '@/components/appSidebar/AppSidebarHeader'
+import AppSidebarFooter from '@/components/appSidebar/AppSidebarFooter'
+
 const sidebarItems = [
 	{
 		label: "Home",
@@ -19,24 +19,9 @@ const sidebarItems = [
 ]
 
 const AppSidebar = () => {
-	const { resolvedTheme } = useTheme()
-	const { mounted } = useMounted()
-	const imageTheme = mounted ? (resolvedTheme || 'dark') : 'dark'
-
 	return (
-		<Sidebar>
-			<SidebarHeader>
-				<SidebarMenu>
-					<SidebarMenuItem>
-						<SidebarMenuButton asChild>
-							<Link href="/" >
-								<Image src={`/user-default-${imageTheme}.svg`} alt="user icon" height={20} width={20} />
-								<span>Network Tabs</span>
-							</Link>
-						</SidebarMenuButton>
-					</SidebarMenuItem>
-				</SidebarMenu>
-			</SidebarHeader>
+		<Sidebar collapsible='icon' >
+			<AppSidebarHeader />
 
 			<SidebarContent>
 				<SidebarGroup>
@@ -60,8 +45,8 @@ const AppSidebar = () => {
 				</SidebarGroup>
 			</SidebarContent>
 
-			<SidebarFooter>
-			</SidebarFooter>
+			<AppSidebarFooter />
+
 		</Sidebar>
 	)
 }
