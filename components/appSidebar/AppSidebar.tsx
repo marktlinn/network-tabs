@@ -31,8 +31,10 @@ const sidebarItems = [
 ]
 
 const applications = [
-	{ name: "Node" },
-	{ name: "Office" }
+	{ name: "Node-1" },
+	{ name: "Office" },
+	{ name: "Node-2" },
+	{ name: "Node-3" }
 ]
 
 const AppSidebar = () => {
