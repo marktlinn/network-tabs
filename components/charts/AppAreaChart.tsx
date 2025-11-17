@@ -50,9 +50,9 @@ export default function AppAreaChart() {
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>Area Chart - Stacked</CardTitle>
+				<CardTitle>Node Network Traffic</CardTitle>
 				<CardDescription>
-					Showing total visitors for the last 6 months
+					Showing total data transfer July - October
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
@@ -117,7 +117,7 @@ export default function AppAreaChart() {
 					<div className="grid gap-2">
 						<CardTitle>Network Traffic - Last 6 Months</CardTitle>
 						<CardDescription>
-							Data transferred per node (TB)
+							Data transferred per node (GB)
 						</CardDescription>
 					</div>
 				</div>

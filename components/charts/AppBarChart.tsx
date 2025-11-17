@@ -1,8 +1,6 @@
 "use client"
-
 import { TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
-
 import {
 	Card,
 	CardContent,
@@ -40,13 +38,13 @@ const chartConfig = {
 
 const AppBarChart = () => {
 	return (
-		<Card>
+		<Card className="h-full flex flex-col justify-between min-w-0 w-full">
 			<CardHeader>
-				<CardTitle>Data from all networks</CardTitle>
+				<CardTitle>Network Uptime By Month</CardTitle>
 				<CardDescription>July - October 2025</CardDescription>
 			</CardHeader>
-			<CardContent>
-				<ChartContainer config={chartConfig}>
+			<CardContent className="min-w-0">
+				<ChartContainer config={chartConfig} className="w-full min-w-0">
 					<BarChart accessibilityLayer data={chartData}>
 						<CartesianGrid vertical={false} />
 						<XAxis
@@ -81,4 +79,5 @@ const AppBarChart = () => {
 		</Card>
 	)
 }
+
 export default AppBarChart
