@@ -3,6 +3,7 @@ import AppAreaChart from "@/components/charts/AppAreaChart"
 import PieChart from "@/components/charts/AppPieChart"
 import { AppCard } from "@/components/cards/AppCard";
 import { ConnectionStatus } from "@/types/node"
+import { NotificationsCard } from "@/components/notifications/Notifications";
 
 function getRandomDateLastSevenDays(): Date {
   const today = new Date();
@@ -36,6 +37,8 @@ export default function HomePage() {
       </div>
 
       <div className="bg-primary-foreground p-4 rounded-lg">TESTING</div>
+
+      <NotificationsCard />
 
       <div className="bg-primary-foreground p-4 rounded-lg lg:col-span-2 xl:col-span-1 2xl:col-span-2">
         <AppAreaChart />
